@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2573EA421D22673300277010 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573EA411D22673300277010 /* AppDelegate.swift */; };
+		2573EA441D22673300277010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2573EA431D22673300277010 /* Assets.xcassets */; };
+		2573EA471D22673300277010 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2573EA451D22673300277010 /* MainMenu.xib */; };
+		2573EA521D22673300277010 /* mTextXpanderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573EA511D22673300277010 /* mTextXpanderTests.swift */; };
+		2573EA5D1D22673300277010 /* mTextXpanderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573EA5C1D22673300277010 /* mTextXpanderUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2573EA4E1D22673300277010 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2573EA361D22673300277010 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2573EA3D1D22673300277010;
+			remoteInfo = mTextXpander;
+		};
+		2573EA591D22673300277010 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2573EA361D22673300277010 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2573EA3D1D22673300277010;
+			remoteInfo = mTextXpander;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2573EA3E1D22673300277010 /* mTextXpander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mTextXpander.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2573EA411D22673300277010 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2573EA431D22673300277010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2573EA461D22673300277010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2573EA481D22673300277010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2573EA4D1D22673300277010 /* mTextXpanderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mTextXpanderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2573EA511D22673300277010 /* mTextXpanderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mTextXpanderTests.swift; sourceTree = "<group>"; };
+		2573EA531D22673300277010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2573EA581D22673300277010 /* mTextXpanderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mTextXpanderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2573EA5C1D22673300277010 /* mTextXpanderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mTextXpanderUITests.swift; sourceTree = "<group>"; };
+		2573EA5E1D22673300277010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2573EA3B1D22673300277010 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2573EA4A1D22673300277010 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2573EA551D22673300277010 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2573EA351D22673300277010 = {
+			isa = PBXGroup;
+			children = (
+				2573EA401D22673300277010 /* mTextXpander */,
+				2573EA501D22673300277010 /* mTextXpanderTests */,
+				2573EA5B1D22673300277010 /* mTextXpanderUITests */,
+				2573EA3F1D22673300277010 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2573EA3F1D22673300277010 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2573EA3E1D22673300277010 /* mTextXpander.app */,
+				2573EA4D1D22673300277010 /* mTextXpanderTests.xctest */,
+				2573EA581D22673300277010 /* mTextXpanderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2573EA401D22673300277010 /* mTextXpander */ = {
+			isa = PBXGroup;
+			children = (
+				2573EA411D22673300277010 /* AppDelegate.swift */,
+				2573EA431D22673300277010 /* Assets.xcassets */,
+				2573EA451D22673300277010 /* MainMenu.xib */,
+				2573EA481D22673300277010 /* Info.plist */,
+			);
+			path = mTextXpander;
+			sourceTree = "<group>";
+		};
+		2573EA501D22673300277010 /* mTextXpanderTests */ = {
+			isa = PBXGroup;
+			children = (
+				2573EA511D22673300277010 /* mTextXpanderTests.swift */,
+				2573EA531D22673300277010 /* Info.plist */,
+			);
+			path = mTextXpanderTests;
+			sourceTree = "<group>";
+		};
+		2573EA5B1D22673300277010 /* mTextXpanderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2573EA5C1D22673300277010 /* mTextXpanderUITests.swift */,
+				2573EA5E1D22673300277010 /* Info.plist */,
+			);
+			path = mTextXpanderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2573EA3D1D22673300277010 /* mTextXpander */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2573EA611D22673300277010 /* Build configuration list for PBXNativeTarget "mTextXpander" */;
+			buildPhases = (
+				2573EA3A1D22673300277010 /* Sources */,
+				2573EA3B1D22673300277010 /* Frameworks */,
+				2573EA3C1D22673300277010 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mTextXpander;
+			productName = mTextXpander;
+			productReference = 2573EA3E1D22673300277010 /* mTextXpander.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2573EA4C1D22673300277010 /* mTextXpanderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2573EA641D22673300277010 /* Build configuration list for PBXNativeTarget "mTextXpanderTests" */;
+			buildPhases = (
+				2573EA491D22673300277010 /* Sources */,
+				2573EA4A1D22673300277010 /* Frameworks */,
+				2573EA4B1D22673300277010 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2573EA4F1D22673300277010 /* PBXTargetDependency */,
+			);
+			name = mTextXpanderTests;
+			productName = mTextXpanderTests;
+			productReference = 2573EA4D1D22673300277010 /* mTextXpanderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2573EA571D22673300277010 /* mTextXpanderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2573EA671D22673300277010 /* Build configuration list for PBXNativeTarget "mTextXpanderUITests" */;
+			buildPhases = (
+				2573EA541D22673300277010 /* Sources */,
+				2573EA551D22673300277010 /* Frameworks */,
+				2573EA561D22673300277010 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2573EA5A1D22673300277010 /* PBXTargetDependency */,
+			);
+			name = mTextXpanderUITests;
+			productName = mTextXpanderUITests;
+			productReference = 2573EA581D22673300277010 /* mTextXpanderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2573EA361D22673300277010 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = rms;
+				TargetAttributes = {
+					2573EA3D1D22673300277010 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					2573EA4C1D22673300277010 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 2573EA3D1D22673300277010;
+					};
+					2573EA571D22673300277010 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 2573EA3D1D22673300277010;
+					};
+				};
+			};
+			buildConfigurationList = 2573EA391D22673300277010 /* Build configuration list for PBXProject "mTextXpander" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2573EA351D22673300277010;
+			productRefGroup = 2573EA3F1D22673300277010 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2573EA3D1D22673300277010 /* mTextXpander */,
+				2573EA4C1D22673300277010 /* mTextXpanderTests */,
+				2573EA571D22673300277010 /* mTextXpanderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2573EA3C1D22673300277010 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2573EA441D22673300277010 /* Assets.xcassets in Resources */,
+				2573EA471D22673300277010 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2573EA4B1D22673300277010 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2573EA561D22673300277010 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2573EA3A1D22673300277010 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2573EA421D22673300277010 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2573EA491D22673300277010 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2573EA521D22673300277010 /* mTextXpanderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2573EA541D22673300277010 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2573EA5D1D22673300277010 /* mTextXpanderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2573EA4F1D22673300277010 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2573EA3D1D22673300277010 /* mTextXpander */;
+			targetProxy = 2573EA4E1D22673300277010 /* PBXContainerItemProxy */;
+		};
+		2573EA5A1D22673300277010 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2573EA3D1D22673300277010 /* mTextXpander */;
+			targetProxy = 2573EA591D22673300277010 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2573EA451D22673300277010 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2573EA461D22673300277010 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2573EA5F1D22673300277010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2573EA601D22673300277010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2573EA621D22673300277010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = mTextXpander/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rms.mTextXpander;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2573EA631D22673300277010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = mTextXpander/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rms.mTextXpander;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2573EA651D22673300277010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = mTextXpanderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rms.mTextXpanderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mTextXpander.app/Contents/MacOS/mTextXpander";
+			};
+			name = Debug;
+		};
+		2573EA661D22673300277010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = mTextXpanderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rms.mTextXpanderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mTextXpander.app/Contents/MacOS/mTextXpander";
+			};
+			name = Release;
+		};
+		2573EA681D22673300277010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = mTextXpanderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rms.mTextXpanderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = mTextXpander;
+			};
+			name = Debug;
+		};
+		2573EA691D22673300277010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = mTextXpanderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rms.mTextXpanderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = mTextXpander;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2573EA391D22673300277010 /* Build configuration list for PBXProject "mTextXpander" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2573EA5F1D22673300277010 /* Debug */,
+				2573EA601D22673300277010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2573EA611D22673300277010 /* Build configuration list for PBXNativeTarget "mTextXpander" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2573EA621D22673300277010 /* Debug */,
+				2573EA631D22673300277010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2573EA641D22673300277010 /* Build configuration list for PBXNativeTarget "mTextXpanderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2573EA651D22673300277010 /* Debug */,
+				2573EA661D22673300277010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2573EA671D22673300277010 /* Build configuration list for PBXNativeTarget "mTextXpanderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2573EA681D22673300277010 /* Debug */,
+				2573EA691D22673300277010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2573EA361D22673300277010 /* Project object */;
+}

@@ -7,11 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		254B5B0C1D363E67008F5281 /* KeyNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 254B5B0B1D363E67008F5281 /* KeyNames.m */; };
+		256E4DA01D2D3FF00070B5B7 /* AddElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256E4D9E1D2D3FF00070B5B7 /* AddElement.swift */; };
+		256E4DA11D2D3FF00070B5B7 /* AddElement.xib in Resources */ = {isa = PBXBuildFile; fileRef = 256E4D9F1D2D3FF00070B5B7 /* AddElement.xib */; };
+		256E4DA41D2D47B20070B5B7 /* EditElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256E4DA21D2D47B20070B5B7 /* EditElement.swift */; };
+		256E4DA51D2D47B20070B5B7 /* EditElement.xib in Resources */ = {isa = PBXBuildFile; fileRef = 256E4DA31D2D47B20070B5B7 /* EditElement.xib */; };
 		2573EA421D22673300277010 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573EA411D22673300277010 /* AppDelegate.swift */; };
 		2573EA441D22673300277010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2573EA431D22673300277010 /* Assets.xcassets */; };
-		2573EA471D22673300277010 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2573EA451D22673300277010 /* MainMenu.xib */; };
 		2573EA521D22673300277010 /* mTextXpanderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573EA511D22673300277010 /* mTextXpanderTests.swift */; };
 		2573EA5D1D22673300277010 /* mTextXpanderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573EA5C1D22673300277010 /* mTextXpanderUITests.swift */; };
+		2573EA6C1D226C9900277010 /* configViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573EA6A1D226C9900277010 /* configViewController.swift */; };
+		2573EA6D1D226C9900277010 /* configViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2573EA6B1D226C9900277010 /* configViewController.xib */; };
+		25E6A7551D23B73900320E89 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25E6A7541D23B73900320E89 /* MainMenu.xib */; };
+		25E6A75D1D2581D900320E89 /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E6A75B1D2581D900320E89 /* SWXMLHash.framework */; };
+		25E6A75E1D2581D900320E89 /* SWXMLHash.framework.dSYM in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E6A75C1D2581D900320E89 /* SWXMLHash.framework.dSYM */; };
+		25FB1FBF1D2BC946009F3C55 /* mTextXpanderXMLHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FB1FBE1D2BC946009F3C55 /* mTextXpanderXMLHandling.swift */; };
+		25FB1FC11D2BDCF5009F3C55 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FB1FC01D2BDCF5009F3C55 /* EventMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,10 +43,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		254B5B0B1D363E67008F5281 /* KeyNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyNames.m; sourceTree = "<group>"; };
+		254B5B0D1D363E79008F5281 /* KeyNames.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyNames.h; sourceTree = "<group>"; };
+		256E4D9E1D2D3FF00070B5B7 /* AddElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddElement.swift; sourceTree = "<group>"; };
+		256E4D9F1D2D3FF00070B5B7 /* AddElement.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddElement.xib; sourceTree = "<group>"; };
+		256E4DA21D2D47B20070B5B7 /* EditElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditElement.swift; sourceTree = "<group>"; };
+		256E4DA31D2D47B20070B5B7 /* EditElement.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditElement.xib; sourceTree = "<group>"; };
+		256E4DEA1D2EB87F0070B5B7 /* mTextXpander-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mTextXpander-Bridging-Header.h"; sourceTree = "<group>"; };
 		2573EA3E1D22673300277010 /* mTextXpander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mTextXpander.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2573EA411D22673300277010 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2573EA431D22673300277010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2573EA461D22673300277010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2573EA481D22673300277010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2573EA4D1D22673300277010 /* mTextXpanderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mTextXpanderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2573EA511D22673300277010 /* mTextXpanderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mTextXpanderTests.swift; sourceTree = "<group>"; };
@@ -43,6 +60,13 @@
 		2573EA581D22673300277010 /* mTextXpanderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mTextXpanderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2573EA5C1D22673300277010 /* mTextXpanderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mTextXpanderUITests.swift; sourceTree = "<group>"; };
 		2573EA5E1D22673300277010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2573EA6A1D226C9900277010 /* configViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = configViewController.swift; sourceTree = "<group>"; };
+		2573EA6B1D226C9900277010 /* configViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = configViewController.xib; sourceTree = "<group>"; };
+		25E6A7541D23B73900320E89 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		25E6A75B1D2581D900320E89 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/Mac/SWXMLHash.framework; sourceTree = "<group>"; };
+		25E6A75C1D2581D900320E89 /* SWXMLHash.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SWXMLHash.framework.dSYM; path = Carthage/Build/Mac/SWXMLHash.framework.dSYM; sourceTree = "<group>"; };
+		25FB1FBE1D2BC946009F3C55 /* mTextXpanderXMLHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mTextXpanderXMLHandling.swift; sourceTree = "<group>"; };
+		25FB1FC01D2BDCF5009F3C55 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25E6A75D1D2581D900320E89 /* SWXMLHash.framework in Frameworks */,
+				25E6A75E1D2581D900320E89 /* SWXMLHash.framework.dSYM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +99,8 @@
 		2573EA351D22673300277010 = {
 			isa = PBXGroup;
 			children = (
+				25E6A75B1D2581D900320E89 /* SWXMLHash.framework */,
+				25E6A75C1D2581D900320E89 /* SWXMLHash.framework.dSYM */,
 				2573EA401D22673300277010 /* mTextXpander */,
 				2573EA501D22673300277010 /* mTextXpanderTests */,
 				2573EA5B1D22673300277010 /* mTextXpanderUITests */,
@@ -94,9 +122,20 @@
 			isa = PBXGroup;
 			children = (
 				2573EA411D22673300277010 /* AppDelegate.swift */,
+				254B5B0B1D363E67008F5281 /* KeyNames.m */,
+				254B5B0D1D363E79008F5281 /* KeyNames.h */,
+				25FB1FC01D2BDCF5009F3C55 /* EventMonitor.swift */,
+				25E6A7541D23B73900320E89 /* MainMenu.xib */,
 				2573EA431D22673300277010 /* Assets.xcassets */,
-				2573EA451D22673300277010 /* MainMenu.xib */,
+				2573EA6A1D226C9900277010 /* configViewController.swift */,
+				2573EA6B1D226C9900277010 /* configViewController.xib */,
+				25FB1FBE1D2BC946009F3C55 /* mTextXpanderXMLHandling.swift */,
 				2573EA481D22673300277010 /* Info.plist */,
+				256E4D9E1D2D3FF00070B5B7 /* AddElement.swift */,
+				256E4D9F1D2D3FF00070B5B7 /* AddElement.xib */,
+				256E4DA21D2D47B20070B5B7 /* EditElement.swift */,
+				256E4DA31D2D47B20070B5B7 /* EditElement.xib */,
+				256E4DEA1D2EB87F0070B5B7 /* mTextXpander-Bridging-Header.h */,
 			);
 			path = mTextXpander;
 			sourceTree = "<group>";
@@ -129,6 +168,7 @@
 				2573EA3A1D22673300277010 /* Sources */,
 				2573EA3B1D22673300277010 /* Frameworks */,
 				2573EA3C1D22673300277010 /* Resources */,
+				25E6A75F1D2581F700320E89 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -224,7 +264,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2573EA441D22673300277010 /* Assets.xcassets in Resources */,
-				2573EA471D22673300277010 /* MainMenu.xib in Resources */,
+				256E4DA51D2D47B20070B5B7 /* EditElement.xib in Resources */,
+				2573EA6D1D226C9900277010 /* configViewController.xib in Resources */,
+				25E6A7551D23B73900320E89 /* MainMenu.xib in Resources */,
+				256E4DA11D2D3FF00070B5B7 /* AddElement.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,12 +287,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		25E6A75F1D2581F700320E89 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/SWXMLHash.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2573EA3A1D22673300277010 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				256E4DA41D2D47B20070B5B7 /* EditElement.swift in Sources */,
+				256E4DA01D2D3FF00070B5B7 /* AddElement.swift in Sources */,
+				254B5B0C1D363E67008F5281 /* KeyNames.m in Sources */,
+				25FB1FBF1D2BC946009F3C55 /* mTextXpanderXMLHandling.swift in Sources */,
+				2573EA6C1D226C9900277010 /* configViewController.swift in Sources */,
 				2573EA421D22673300277010 /* AppDelegate.swift in Sources */,
+				25FB1FC11D2BDCF5009F3C55 /* EventMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,17 +349,6 @@
 			targetProxy = 2573EA591D22673300277010 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		2573EA451D22673300277010 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2573EA461D22673300277010 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2573EA5F1D22673300277010 /* Debug */ = {
@@ -382,11 +437,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = mTextXpander/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rms.mTextXpander;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mTextXpander/mTextXpander-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -394,11 +456,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = mTextXpander/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rms.mTextXpander;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mTextXpander/mTextXpander-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -471,6 +539,7 @@
 				2573EA631D22673300277010 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2573EA641D22673300277010 /* Build configuration list for PBXNativeTarget "mTextXpanderTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +548,7 @@
 				2573EA661D22673300277010 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2573EA671D22673300277010 /* Build configuration list for PBXNativeTarget "mTextXpanderUITests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +557,7 @@
 				2573EA691D22673300277010 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -164,7 +164,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 //let chars: [unichar] = Array(element.alt.utf16)
                 for altChar in element.alt.characters {
                     
-                    
+                    //TODO: add control to check atually if characters are ? : . { } | " : ? > < ~ ! @ # $ % ^ & * ( ) _ +
+                    //basicall all special char needing shift... we need to treat them specially.
                     print(element.alt)
                     let lowercaseEval = String(altChar).lowercaseString
                     let evalOriginalString = String(altChar)
@@ -177,7 +178,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                         if lowercaseEval == evalOriginalString
                         {
                             //char which is not newline and not uppercase
-                            let loc1 : CGEventTapLocation = CGEventTapLocation(rawValue: 0)!
+                            //let loc1 : CGEventTapLocation = CGEventTapLocation(rawValue: 0)!
                             //all good to go
                             //send the event first down key then up
                             let writeCharEventDown = CGEventCreateKeyboardEvent(nil, convertCharToKeyCode(altChar),true)! //down key
@@ -189,14 +190,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                         }
                         else{
                             
-                            let loc2 : CGEventTapLocation = CGEventTapLocation(rawValue: 0)!
+                            //let loc2 : CGEventTapLocation = CGEventTapLocation(rawValue: 0)!
                             
                             //we have an uppercase char
                             //set shift flag or directly press shift
                             //lets simulate anyway shift up
                             
                             //shift down event
-                            let shiftDown = CGEventCreateKeyboardEvent(nil, CGKeyCode(56), true)
+                            //let shiftDown = CGEventCreateKeyboardEvent(nil, CGKeyCode(56), true)
                             //shift up event
                             let shiftUp = CGEventCreateKeyboardEvent(nil, CGKeyCode(56), false)
                             
@@ -251,7 +252,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     }
                     else {
                         //we are writing a space or a newline
-                        let loc1 : CGEventTapLocation = CGEventTapLocation(rawValue: 0)!
+                        //let loc1 : CGEventTapLocation = CGEventTapLocation(rawValue: 0)!
                         //all good to go
                         //send the event first down key then up
                         let writeCharEventDown = CGEventCreateKeyboardEvent(nil, convertCharToKeyCode(altChar),true)! //down key

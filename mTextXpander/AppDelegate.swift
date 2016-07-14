@@ -172,6 +172,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     
                     let whitespaceEvaluator = evalOriginalString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
                     
+                    //we actually write like if we had an english keyboard only... other lanfuages I believe may not be supported?
+                    let specialChars:[Character] = ["!","@","#","$","%","^","&","*","(",")","_","+","~","\"",":","|","}","{",">","<","?","±"]
+                    
                     if !whitespaceEvaluator.isEmpty
                     {
                     

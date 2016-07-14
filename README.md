@@ -1,5 +1,8 @@
 # mTextXpander
 a homemade Mac OS X text replacement / expansion app, templating app, written in SWIFT. functional but needs improvement, now in beta stage.
+The only supported keyboard layout for now is English US. I am not sure how to implement different keyboard layouts at this stage.
+
+...some parts of the code still need lots of cloaning, and there is an ObjC bridge I thought I'd have to use but didn't so it is still there...
 
 Important disclaimer:
  the software is provided as is, is in beta stage eternally, and the author is not liable for any issue you think this software may case.
@@ -70,7 +73,7 @@ from which I got the base structure of the menu bar app
 
 The legal Disclaimer:
 
-Copyright (c) 2015, Mattia Rambelli
+Copyright (c) 2016, Mattia Rambelli
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:

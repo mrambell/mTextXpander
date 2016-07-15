@@ -166,7 +166,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     
                     //TODO: add control to check atually if characters are ? : . { } | " : ? > < ~ ! @ # $ % ^ & * ( ) _ +
                     //basicall all special char needing shift... we need to treat them specially.
-                    print(element.alt)
+                    //print(element.alt)
                     let lowercaseEval = String(altChar).lowercaseString
                     let evalOriginalString = String(altChar)
                     
@@ -175,10 +175,42 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     //we actually write like if we had an english keyboard only... other lanfuages I believe may not be supported?
                     let specialChars:[Character] = ["!","@","#","$","%","^","&","*","(",")","_","+","~","\"",":","|","}","{",">","<","?","±"]
                     
+                    
+                    
                     if !whitespaceEvaluator.isEmpty
                     {
+                        
+                        if specialChars.contains(altChar) {
+                            
+                            //we got a special char to handle! oh gosh... I will have to adapt this from a set of numbers manually mapped to something more programmatic...
+                            let shiftUp = CGEventCreateKeyboardEvent(nil, CGKeyCode(56), false)
+                            
+                            //keydown event
+                            let writeUpcaseCharEventDown = CGEventCreateKeyboardEvent(nil, convertSpecialCharToKeyCode(String(altChar).lowercaseString.characters.first!),true)! //down key
+                            //key up event
+                            let writeUpcaseCharEventUp = CGEventCreateKeyboardEvent(nil, convertSpecialCharToKeyCode(String(altChar).lowercaseString.characters.first!),false)! //up key
+                            
+                            CGEventSetFlags(writeUpcaseCharEventDown, CGEventFlags.MaskShift)//set shift key down for above event
+                            CGEventPost(eventTapLocation, writeUpcaseCharEventDown);//post event
+                            //I'm then releasing the 'z' key for completeness (also setting the shift-flag on, though not sure if this is correct).
+                            
+                            //event2 = CGEventCreateKeyboardEvent(NULL, (CGKeyCode)6, false);
+                            CGEventSetFlags(writeUpcaseCharEventUp, CGEventFlags.MaskShift)
+                            CGEventPost(eventTapLocation, writeUpcaseCharEventUp)
+                            //Finally (and bizarrely) you DO need to send the 'key up' event for the shift key:
+                            
+                            //e5 = CGEventCreateKeyboardEvent(NULL, (CGKeyCode)56, false);
+                            CGEventPost(eventTapLocation, shiftUp)
+                            CGEventPost(eventTapLocation, shiftUp)
+                            CGEventPost(eventTapLocation, shiftUp)
+                            CGEventPost(eventTapLocation, shiftUp)
+                            CGEventPost(eventTapLocation, shiftUp)
+                            CGEventPost(eventTapLocation, shiftUp)
+                            CGEventPost(eventTapLocation, shiftUp)
+                            
+                        }
                     
-                        if lowercaseEval == evalOriginalString
+                        else if lowercaseEval == evalOriginalString
                         {
                             //char which is not newline and not uppercase
                             //let loc1 : CGEventTapLocation = CGEventTapLocation(rawValue: 0)!
@@ -472,6 +504,37 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         case " ": theIntCode = 49
 
         default: theIntCode = 49
+        }
+        return CGKeyCode(theIntCode)
+    }
+    
+    func convertSpecialCharToKeyCode(aAltChar: Character) -> CGKeyCode {
+        var theIntCode:Int
+        switch (aAltChar) {
+            case "~": theIntCode = 50
+            case "!": theIntCode = 18
+            case "@": theIntCode = 19
+            case "#": theIntCode = 20
+            case "$": theIntCode = 21
+            case "%": theIntCode = 23
+            case "^": theIntCode = 22
+            case "&": theIntCode = 26
+            case "*": theIntCode = 28
+            case "(": theIntCode = 25
+            case ")": theIntCode = 29
+            case "_": theIntCode = 27
+            case "+": theIntCode = 24
+            case "{": theIntCode = 33
+            case "}": theIntCode = 30
+            case ":": theIntCode = 41
+            case "\"": theIntCode = 39
+            case "|": theIntCode = 42
+            case "<": theIntCode = 43
+            case ">": theIntCode = 47
+            case "?": theIntCode = 44
+            case "±": theIntCode = 10
+        
+            default: theIntCode = 49
         }
         return CGKeyCode(theIntCode)
     }

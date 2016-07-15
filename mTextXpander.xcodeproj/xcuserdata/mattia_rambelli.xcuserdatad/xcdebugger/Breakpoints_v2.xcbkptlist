@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mTextXpander/AppDelegate.swift"
-            timestampString = "490127169.089446"
+            timestampString = "490262036.289513"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
             landmarkName = "convertKeyCode(_:)"
             landmarkType = "5">
          </BreakpointContent>

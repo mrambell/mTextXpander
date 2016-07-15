@@ -2,7 +2,7 @@
 a homemade Mac OS X text replacement / expansion app, templating app, written in SWIFT. functional but needs improvement, now in beta stage.
 The only supported keyboard layout for now is English US. I am not sure how to implement different keyboard layouts at this stage.
 
-...some parts of the code still need lots of cloaning, and there is an ObjC bridge I thought I'd have to use but didn't so it is still there...
+Some parts of the code still need lots of cloaning, and there is an ObjC bridge I thought I'd have to use but didn't so it is still there...
 
 Important disclaimer:
  the software is provided as is, is in beta stage eternally, and the author is not liable for any issue you think this software may case.
@@ -11,7 +11,7 @@ Important disclaimer:
  It should be compatible with only Mac OS X 10.11 but I did not try with any other versions.
 
 Status:
-it is mostly functional, but misses some handling like special chars as ? _ * and others which are not handled right now.
+the app can now write special characters, but still only US_en layout is supported. as soon as I figure out how to programmatically detect the keyboard layout and identify a conversion algorithm I will switch to multilang, but I have no idea so far when will that happen.
 
 Structure:
 mTextXpander reads from an XML file located in your document folder called xpand.xml

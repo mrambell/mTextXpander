@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     //I'd like to mark when I am typing...
     //we monitor that inside self.handleBuffer and deactivate the function if it is set to true.
     var autoTypingFlag:Bool=false
-    
+
     
     func applicationDidFinishLaunching(notification: NSNotification) {
         
@@ -104,6 +104,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         //let pressedKey = convertKeyCode(theEvent.keyCode)
         print(theEvent.keyCode)
+        //print(translateToMappedLayoutKeycode(theEvent.keyCode))
         
         //evaluate if space or tab is pressed. that is our actuator to check and start replacing routine.
         //evaluate pressed key func does just that.
@@ -136,6 +137,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func typeLongText(theEvent: NSEvent) {
+        
+        var ev : CGEventRef
+        //kCGEventSourceStateHIDSystemState
+        let src = CGEventSourceCreate(CGEventSourceStateID.CombinedSessionState)
+        let theflag : CGEventFlags  = CGEventFlags.MaskShift;
+        let shiftUp = CGEventCreateKeyboardEvent(src, CGKeyCode(56), false)
+        
         //not bothering with buffer control right now...
         //try to simulate a keyboard press that updates background app
         //println("key down is \(event.keyCode)");
@@ -143,9 +151,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         //get tap location and register delete keyboardEvent
         
         let eventTapLocation : CGEventTapLocation = CGEventTapLocation(rawValue: 0)!
-        let deleteEvent = CGEventCreateKeyboardEvent(nil, CGKeyCode(51), true)
-        
-        
+        let deleteEvent = CGEventCreateKeyboardEvent(src, CGKeyCode(51), true)
 
         //example post:
         //CGEventPost(eventTapLocation, deleteEvent)
@@ -182,44 +188,53 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                         
                         if specialChars.contains(altChar) {
                             
-                            //we got a special char to handle! oh gosh... I will have to adapt this from a set of numbers manually mapped to something more programmatic...
-                            let shiftUp = CGEventCreateKeyboardEvent(nil, CGKeyCode(56), false)
+                            ///we got a special char to handle! oh gosh... I will have to adapt this from a set of numbers manually mapped to something more programmatic...
+                            
                             
                             //keydown event
-                            let writeUpcaseCharEventDown = CGEventCreateKeyboardEvent(nil, convertSpecialCharToKeyCode(String(altChar).lowercaseString.characters.first!),true)! //down key
-                            //key up event
-                            let writeUpcaseCharEventUp = CGEventCreateKeyboardEvent(nil, convertSpecialCharToKeyCode(String(altChar).lowercaseString.characters.first!),false)! //up key
+                            ev = CGEventCreateKeyboardEvent(src, convertSpecialCharToKeyCode(String(altChar).lowercaseString.characters.first!),true)! //down key
                             
-                            CGEventSetFlags(writeUpcaseCharEventDown, CGEventFlags.MaskShift)//set shift key down for above event
-                            CGEventPost(eventTapLocation, writeUpcaseCharEventDown);//post event
+                            //we will handle the whole!
+                            CGEventSetFlags(ev,theflag); //combine flags
+                            CGEventPost(eventTapLocation,ev);
+                            //CFRelease(ev);
+                            
+                            //key up event
+                            ev = CGEventCreateKeyboardEvent(src, convertSpecialCharToKeyCode(String(altChar).lowercaseString.characters.first!),false)! //up key
+                            
+                            CGEventSetFlags(ev, CGEventGetFlags(shiftUp))//set shift key UP for above event
+                            CGEventPost(eventTapLocation, ev);//post event
                             //I'm then releasing the 'z' key for completeness (also setting the shift-flag on, though not sure if this is correct).
                             
                             //event2 = CGEventCreateKeyboardEvent(NULL, (CGKeyCode)6, false);
-                            CGEventSetFlags(writeUpcaseCharEventUp, CGEventFlags.MaskShift)
-                            CGEventPost(eventTapLocation, writeUpcaseCharEventUp)
+                            //CGEventSetFlags(writeUpcaseCharEventUp, CGEventFlags.MaskShift)
+                            //GEventPost(eventTapLocation, writeUpcaseCharEventUp)
                             //Finally (and bizarrely) you DO need to send the 'key up' event for the shift key:
                             
                             //e5 = CGEventCreateKeyboardEvent(NULL, (CGKeyCode)56, false);
-                            CGEventPost(eventTapLocation, shiftUp)
-                            CGEventPost(eventTapLocation, shiftUp)
-                            CGEventPost(eventTapLocation, shiftUp)
-                            CGEventPost(eventTapLocation, shiftUp)
-                            CGEventPost(eventTapLocation, shiftUp)
-                            CGEventPost(eventTapLocation, shiftUp)
                             CGEventPost(eventTapLocation, shiftUp)
                             
                         }
                     
                         else if lowercaseEval == evalOriginalString
                         {
+                            
+                            CGEventPost(eventTapLocation, shiftUp)
                             //char which is not newline and not uppercase
                             //let loc1 : CGEventTapLocation = CGEventTapLocation(rawValue: 0)!
                             //all good to go
                             //send the event first down key then up
-                            let writeCharEventDown = CGEventCreateKeyboardEvent(nil, convertCharToKeyCode(altChar),true)! //down key
-                            let writeCharEventUp = CGEventCreateKeyboardEvent(nil, convertCharToKeyCode(String(altChar).lowercaseString.characters.first!),false)! //up key
-                            CGEventPost(eventTapLocation, writeCharEventDown)
-                            CGEventPost(eventTapLocation, writeCharEventUp)
+                            ev = CGEventCreateKeyboardEvent(src, convertCharToKeyCode(altChar),true)! //down key
+                            CGEventSetFlags(ev, CGEventGetFlags(shiftUp))//set shift key UP for above event
+                            
+                            CGEventPost(eventTapLocation, ev);//post event
+                            
+                            
+                            ev = CGEventCreateKeyboardEvent(src, convertCharToKeyCode(String(altChar).lowercaseString.characters.first!),false)! //up key
+                            
+                            CGEventSetFlags(ev, CGEventGetFlags(shiftUp))//set shift key UP for above event
+                            
+                            CGEventPost(eventTapLocation, ev);//post event
                             
                             
                         }
@@ -234,51 +249,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                             //shift down event
                             //let shiftDown = CGEventCreateKeyboardEvent(nil, CGKeyCode(56), true)
                             //shift up event
-                            let shiftUp = CGEventCreateKeyboardEvent(nil, CGKeyCode(56), false)
+                            //let shiftUp = CGEventCreateKeyboardEvent(nil, CGKeyCode(56), false)
+                            
                             
                             //keydown event
-                            let writeUpcaseCharEventDown = CGEventCreateKeyboardEvent(nil, convertCharToKeyCode(String(altChar).lowercaseString.characters.first!),true)! //down key
+                            ev = CGEventCreateKeyboardEvent(src, convertCharToKeyCode(String(altChar).lowercaseString.characters.first!),true)! //down key
+                            CGEventSetFlags(ev, theflag)
+                            
+                            //post key down for above event
+                            CGEventPost(eventTapLocation, ev);//post event
+                            
                             //key up event
-                            let writeUpcaseCharEventUp = CGEventCreateKeyboardEvent(nil, convertCharToKeyCode(String(altChar).lowercaseString.characters.first!),false)! //up key
                             
-                            //set char mask to shiftdown? cannot make upcase stuff so must be imo
-                            //CGEventSetFlags(writeUpcaseCharEventDown, CGEventFlags.MaskAlphaShift)
-                            //CGEventSetFlags(writeUpcaseCharEventDown, CGEventFlags.MaskShift)
-                            //CGEventSetFlags(writeUpcaseCharEventDown, CGEventFlags.MaskShift)
+                            ev = CGEventCreateKeyboardEvent(src, convertCharToKeyCode(String(altChar).lowercaseString.characters.first!),false)! //up key
                             
-                            //set shift down
-                            //CGEventPost(eventTapLocation, shiftDown)
-                            //set char down
-                            //CGEventPost(eventTapLocation, writeUpcaseCharEventDown)
-                            //set char up
-                            //CGEventPost(eventTapLocation, writeUpcaseCharEventUp)
-                            //set shift up
-                            //CGEventPost(eventTapLocation, shiftUp)
+                            CGEventSetFlags(ev, CGEventGetFlags(shiftUp))//set shift key UP for above event
+
+                            CGEventPost(eventTapLocation, ev);//post event
                             
-                            //lets repeat coupla times as seems slow or concurrent?
-                            //CGEventPost(loc2, shiftUp)
-                            //CGEventPost(loc2, shiftUp)
-                            //CGEventPost(loc2, shiftUp)
-                            //CGEventSetFlags(writeUpcaseCharEventDown, CGEventFlags.MaskShift)
-                            //CGEventSetFlags(writeUpcaseCharEventDown, CGEventFlags.MaskAlphaShift)
-                            //CGEventRef event1, event2;
-                            //event1 = CGEventCreateKeyboardEvent(NULL, (CGKeyCode)6, true);//'z' keydown event
-                            CGEventSetFlags(writeUpcaseCharEventDown, CGEventFlags.MaskShift)//set shift key down for above event
-                            CGEventPost(eventTapLocation, writeUpcaseCharEventDown);//post event
-                            //I'm then releasing the 'z' key for completeness (also setting the shift-flag on, though not sure if this is correct).
-                            
-                            //event2 = CGEventCreateKeyboardEvent(NULL, (CGKeyCode)6, false);
-                            CGEventSetFlags(writeUpcaseCharEventUp, CGEventFlags.MaskShift)
-                            CGEventPost(eventTapLocation, writeUpcaseCharEventUp)
-                            //Finally (and bizarrely) you DO need to send the 'key up' event for the shift key:
-                            
-                            //e5 = CGEventCreateKeyboardEvent(NULL, (CGKeyCode)56, false);
-                            CGEventPost(eventTapLocation, shiftUp)
-                            CGEventPost(eventTapLocation, shiftUp)
-                            CGEventPost(eventTapLocation, shiftUp)
-                            CGEventPost(eventTapLocation, shiftUp)
-                            CGEventPost(eventTapLocation, shiftUp)
-                            CGEventPost(eventTapLocation, shiftUp)
+                            //shift UP
                             CGEventPost(eventTapLocation, shiftUp)
                             //consider this: http://stackoverflow.com/questions/2008126/cgeventpost-possible-bug-when-simulating-keyboard-events
                             //issues with this behavior generally.... maybe related to multitask?
@@ -290,8 +279,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                         //let loc1 : CGEventTapLocation = CGEventTapLocation(rawValue: 0)!
                         //all good to go
                         //send the event first down key then up
-                        let writeCharEventDown = CGEventCreateKeyboardEvent(nil, convertCharToKeyCode(altChar),true)! //down key
-                        let writeCharEventUp = CGEventCreateKeyboardEvent(nil, convertCharToKeyCode(altChar),false)! //up key
+                        let writeCharEventDown = CGEventCreateKeyboardEvent(src, convertCharToKeyCode(altChar),true)! //down key
+                        let writeCharEventUp = CGEventCreateKeyboardEvent(src, convertCharToKeyCode(altChar),false)! //up key
                         CGEventPost(eventTapLocation, writeCharEventDown)
                         CGEventPost(eventTapLocation, writeCharEventUp)
                     }
@@ -435,6 +424,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         default: return " "
         }
         //return "[unknown]";
+       
     }
     
     func convertCharToKeyCode(aAltChar: Character) -> CGKeyCode {
@@ -506,6 +496,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         default: theIntCode = 49
         }
         return CGKeyCode(theIntCode)
+        //let ev = CGEventCreateKeyboardEvent(nil, convertCharToKeyCode(String(aAltChar).lowercaseString.characters.first!),true)! //down key
+        
     }
     
     func convertSpecialCharToKeyCode(aAltChar: Character) -> CGKeyCode {
@@ -539,5 +531,59 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return CGKeyCode(theIntCode)
     }
 
-
+    func translateToMappedLayoutKeycode(code: UInt16) -> CGKeyCode {
+    
+    // TEST!!!!!!!!!!!!!!
+    //http://stackoverflow.com/questions/27735217/how-to-use-uckeytranslate
+    let keyboard = TISCopyCurrentKeyboardInputSource().takeRetainedValue()
+    let rawLayoutData = TISGetInputSourceProperty(keyboard, kTISPropertyUnicodeKeyLayoutData)
+    print("Keyboard: ",keyboard)
+    var layoutData      = unsafeBitCast(rawLayoutData, CFDataRef.self)
+    var layout: UnsafePointer<UCKeyboardLayout> = unsafeBitCast(CFDataGetBytePtr(layoutData), UnsafePointer<UCKeyboardLayout>.self)
+    print("Layout: ",layout)
+    
+    print("KbdType ",LMGetKbdType()) // Sanity check (prints 44)
+    var keycode             = code                     // Keycode for z
+    var keyaction           = UInt16(0)
+    var modifierKeyState    = UInt32(0 << 0)                                  // NOShift
+    var keyboardType        = UInt32(LMGetKbdType())
+    var keyTranslateOptions = OptionBits(kUCKeyTranslateNoDeadKeysBit)
+    var deadKeyState        = UInt32(0)                                       // Is 0 the correct value?
+    var maxStringLength     = 1                                 // uint32
+    var chars: [UniChar]    = [0]
+    var actualStringLength  = 1
+    var result = UCKeyTranslate(layout, keycode, keyaction, modifierKeyState, keyboardType, keyTranslateOptions,
+                                &deadKeyState, maxStringLength, &actualStringLength, &chars)
+    print("printing result! --> ", result)
+    print("Out: ", chars[0])
+    print("KEYCODE: ",keycode)
+    print("Done")
+    //!!!!!!!!!!!!!!!!!!!
+    return chars[0]
+    }
 }
+
+/*
+ Chang ekeyboard handling to reflect this:
+ The cleanest way for this is bitwise OR'ing the current modifier flags with the flag of your desired modifier(s) , e.g.:
+ 
+ CGEventFlags flags = kCGEventFlagMaskShift;
+ CGEventRef ev;
+ CGEventSourceRef source = CGEventSourceCreate (kCGEventSourceStateCombinedSessionState);
+ 
+ //press down
+ ev = CGEventCreateKeyboardEvent (source, keyCode, true);
+ CGEventSetFlags(ev,flags | CGEventGetFlags(ev)); //combine flags
+ CGEventPost(kCGHIDEventTap,ev);
+ CFRelease(ev);
+ 
+ //press up
+ ev = CGEventCreateKeyboardEvent (source, keyCode, false);
+ CGEventSetFlags(ev,flags | CGEventGetFlags(ev)); //combine flags
+ CGEventPost(kCGHIDEventTap,ev);
+ CFRelease(ev);
+ 
+ CFRelease(source);
+
+ */
+

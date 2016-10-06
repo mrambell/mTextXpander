@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mTextXpander/AppDelegate.swift"
-            timestampString = "490104330.64465"
+            timestampString = "496922674.694127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mTextXpander/AppDelegate.swift"
-            timestampString = "490262036.289513"
+            timestampString = "496940265.731261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
             landmarkName = "convertKeyCode(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mTextXpander/AppDelegate.swift"
-            timestampString = "490107678.987048"
+            timestampString = "496940265.731261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "typeLongText(_:)"
             landmarkType = "5">
          </BreakpointContent>

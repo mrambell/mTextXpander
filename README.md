@@ -1,4 +1,12 @@
 # mTextXpander
+
+UPDATE 20190215
+As you can guess, I did not really manage to follow up on any open issue that the code has (time constraints)
+Also, this code is still swift 2.2 and would need to be converted to swift 4 nowadays. 
+On any case, I uploaded a compiled version for wohmever would like to use the (incomplete) version (works with US qwerty only, really)
+
+----------------
+
 a homemade Mac OS X text replacement / expansion app, templating app, written in SWIFT. functional but needs improvement, now in beta stage.
 The only supported keyboard layout for now is English US. I am not sure how to implement different keyboard layouts at this stage.
 
